@@ -5,14 +5,14 @@
            src="/assets/ridethelightning.jpg"
            alt="playlist_image"/>
       <div class="card-body">
-        <h4 class="card-title h1 text-light">My playlist</h4>
+        <h4 class="card-title h1 text-light">{{playlist.name}}</h4>
         <p class="card-text text-light my-0">Private Playlist</p>
-        <p class="card-text text-light text-">825 songs</p>
+        <p class="card-text text-light text-">{{playlist.songs.length}} songs</p>
       </div>
     </div>
   </div>
   <hr/>
   <div class="row">
-    <app-song-list></app-song-list>
+    <app-song-list [songs]="songs"></app-song-list>
   </div>
 </div>

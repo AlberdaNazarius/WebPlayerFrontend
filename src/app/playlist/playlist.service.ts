@@ -9,8 +9,19 @@ export class PlaylistService {
   }
 
   private playlists: Playlist[] = [
-    new Playlist("Myplay", "favicon.ico", this.songService.getSongs()),
-    new Playlist("Mynonn", "favicon.ico", this.songService.getSongs())
+    new Playlist("Myplay", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 5 . 5 min"),
+    new Playlist("Myplay", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 5 . 5 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
+    new Playlist("Mynonn", "/assets/ridethelightning.jpg", this.songService.getSongs(), "Oct 1 . 15 min"),
   ]
 
   public getPlaylists(): Playlist[] {
