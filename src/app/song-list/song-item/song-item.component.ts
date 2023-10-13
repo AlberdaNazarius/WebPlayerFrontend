@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Song} from "../../../model/song.model";
 
 @Component({
   selector: 'app-song-item',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./song-item.component.css']
 })
 export class SongItemComponent {
-
+  @Input()
+  public index: number;
+  @Input()
+  public song: Song;
 }

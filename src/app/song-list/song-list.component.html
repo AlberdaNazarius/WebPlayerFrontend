@@ -1,0 +1,3 @@
+<div class="container" *ngFor="let song of songs; index as i">
+  <app-song-item [index]="i+1" [song]="song"></app-song-item>
+</div>

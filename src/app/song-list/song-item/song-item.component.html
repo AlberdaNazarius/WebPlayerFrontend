@@ -1,0 +1,22 @@
+<p></p>
+
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col">
+      <div class="song-main-section">
+        <div class="id-image">
+          <span class="song-id">{{index}}</span>
+          <img src="{{song.imagePath}}" alt="music_image">
+        </div>
+
+        <div class="title-author">
+          <div class="row text-light">{{song.name}}</div>
+          <div class="row">{{song.author}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">{{song.album}}</div>
+    <div class="col">{{song.dateAdded}}</div>
+    <div class="col">{{song.duration}}</div>
+  </div>
+</div>
