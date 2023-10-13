@@ -1,0 +1,23 @@
+.container {
+  background-color: #616365;
+  color: #c4c4c4;
+}
+
+.id-image {
+  display: inline-block;
+}
+
+.title-author {
+  display: inline-block;
+}
+
+.song-main-section {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+}
+
+.song-id {
+  margin-right: 15px;
+}
