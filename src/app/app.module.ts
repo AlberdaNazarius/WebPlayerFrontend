@@ -9,8 +9,8 @@ import { PlayerComponent } from './player/player.component';
 import { SongListComponent } from './song-list/song-list.component';
 import { PlaylistCardComponent } from './playlist/playlist-list/playlist-card/playlist-card.component';
 import { PlaylistListComponent } from './playlist/playlist-list/playlist-list.component';
-import {SongService} from "./song-list/song.service";
-import {PlaylistService} from "./playlist/playlist.service";
+import {SongService} from "./shared/service/song.service";
+import {PlaylistService} from "./shared/service/playlist.service";
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
-import {Playlist} from "../../model/playlist.model";
+import {Playlist} from "../model/playlist.model";
 import {Injectable} from "@angular/core";
-import {SongService} from "../song-list/song.service";
+import {SongService} from "./song.service";
 
 @Injectable()
 export class PlaylistService {

@@ -1,4 +1,4 @@
-import {Song} from "../../model/song.model";
+import {Song} from "../model/song.model";
 import {Injectable} from "@angular/core";
 
 @Injectable()
