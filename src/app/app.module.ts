@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { SongItemComponent } from './song-list/song-item/song-item.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { PlayerComponent } from './player/player.component';
-import { SongListComponent } from './song-list/song-list.component';
-import { PlaylistCardComponent } from './playlist/playlist-list/playlist-card/playlist-card.component';
-import { PlaylistListComponent } from './playlist/playlist-list/playlist-list.component';
 import {SongService} from "./shared/service/song.service";
 import {PlaylistService} from "./shared/service/playlist.service";
+import {SongItemComponent} from "./playlist/song-list/song-item/song-item.component";
+import {SongListComponent} from "./playlist/song-list/song-list.component";
+import {PlaylistCardComponent} from "./playlist-table/playlist-card/playlist-card.component";
+import {PlaylistTableComponent} from "./playlist-table/playlist-table.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import {PlaylistService} from "./shared/service/playlist.service";
     PlayerComponent,
     SongListComponent,
     PlaylistCardComponent,
-    PlaylistListComponent
+    PlaylistTableComponent
   ],
   imports: [
     BrowserModule
