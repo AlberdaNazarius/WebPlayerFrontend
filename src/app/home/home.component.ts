@@ -3,11 +3,11 @@ import {Playlist} from "../shared/model/playlist.model";
 import {PlaylistService} from "../shared/service/playlist.service";
 
 @Component({
-  selector: 'app-playlist-table',
-  templateUrl: './playlist-table.component.html',
-  styleUrls: ['./playlist-table.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class PlaylistTableComponent implements OnInit{
+export class HomeComponent implements OnInit{
   protected playlists: Playlist[];
 
 
