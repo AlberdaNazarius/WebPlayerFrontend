@@ -42,7 +42,7 @@
 }
 
 .sidebar-navigation li::before {
-  background-color: #2574A9;
+  background-color: #383f46;
   position: absolute;
   content: '';
   height: 100%;
