@@ -34,16 +34,6 @@
   line-height: 20px;
 }
 
-.sidebar-navigation li a {
-  padding: 10px 15px 10px 30px;
-  display: block;
-  color: #fff;
-}
-
-.sidebar-navigation li .fa {
-  margin-right: 10px;
-}
-
 .sidebar-navigation li a:active,
 .sidebar-navigation li a:hover,
 .sidebar-navigation li a:focus {

@@ -10,7 +10,6 @@ import {PlaylistService} from "../shared/service/playlist.service";
 export class HomeComponent implements OnInit{
   protected playlists: Playlist[];
 
-
   constructor(private playlistService: PlaylistService) {
   }
 
