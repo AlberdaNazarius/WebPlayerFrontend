@@ -12,6 +12,7 @@ import {SongListComponent} from "./playlist/song-list/song-list.component";
 import {PlaylistCardComponent} from "./home/playlist-card/playlist-card.component";
 import {HomeComponent} from "./home/home.component";
 import {RouterModule, Routes} from "@angular/router";
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     PlayerComponent,
     SongListComponent,
     PlaylistCardComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
