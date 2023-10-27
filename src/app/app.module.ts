@@ -11,14 +11,10 @@ import {SongItemComponent} from "./playlist/song-list/song-item/song-item.compon
 import {SongListComponent} from "./playlist/song-list/song-list.component";
 import {PlaylistCardComponent} from "./home/playlist-card/playlist-card.component";
 import {HomeComponent} from "./home/home.component";
-import {RouterModule, Routes} from "@angular/router";
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PlaylistItemComponent } from './sidebar/playlist-item/playlist-item.component';
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'playlist/:id', component: PlaylistComponent }
-]
+import {HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -35,7 +31,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [PlaylistService, SongService],
   bootstrap: [AppComponent]
