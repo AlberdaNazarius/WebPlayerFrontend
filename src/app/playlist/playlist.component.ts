@@ -21,7 +21,8 @@ export class PlaylistComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.playlistService.getPlaylistById(params['id'])
-          .subscribe(responseData => this.playlist = responseData);
+          .subscribe(responseData =>
+            responseData.then(playlist => this.playlist = playlist));
         this.songs = this.playlist.songs;
       }
     );
