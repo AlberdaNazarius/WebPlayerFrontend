@@ -1,0 +1,9 @@
+.bar-dark {
+  background-color: #313334;
+  color: white;
+  border: none;
+}
+
+::placeholder {
+  color: #7d8584;
+}
