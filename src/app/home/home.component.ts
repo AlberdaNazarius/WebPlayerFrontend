@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.playlists = this.playlistService.getPlaylists();
+    this.playlistService.getPlaylists()
+      .subscribe(responseData =>
+        responseData.then(playlists => this.playlists = playlists));
   }
 }

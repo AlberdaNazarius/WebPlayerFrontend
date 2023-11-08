@@ -20,7 +20,8 @@ export class PlaylistComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(
       (params: Params) => {
-        this.playlist = this.playlistService.getPlaylistById(params['id']);
+        this.playlistService.getPlaylistById(params['id'])
+          .subscribe(responseData => this.playlist = responseData);
         this.songs = this.playlist.songs;
       }
     );
