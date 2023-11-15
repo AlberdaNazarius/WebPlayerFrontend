@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Music} from "../shared/model/music.model";
 import * as moment from 'moment';
+import {SongService} from "../shared/service/song.service";
+import {Song} from "../shared/model/song.model";
 
 @Component({
   selector: 'app-player',
@@ -8,25 +9,18 @@ import * as moment from 'moment';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-  title = 'angular-music-player';
   audio = new Audio();
-  musicLength: string = '0:00';
+  currentTime: string;
+  musicLength: string;
   duration: number = 1;
-  currentTime: string = '0:00';
-
-  musicList: Music[];
-
-  displayedColumns: string[] = ['title', 'artist', 'album'];
   trackPointer: number = 0;
-  currentMusic: Music | undefined;
+  musicList: Song[];
+  currentMusic: Song;
 
-  constructor() {
-    this.musicList = [
-      new Music("1", "hehe", "Title", "BOm", "assets/music/Enemy.mp3")
-    ];
-    // this.getAllMusic().subscribe((musicList: Music[]) => {
-    //   this.musicList = musicList;
-    // });
+  constructor(private songService: SongService) {
+    this.musicLength = '0:00';
+    this.currentTime = '0:00';
+    this.musicList = songService.getSongs();
   }
 
   ngOnInit(): void {
@@ -94,14 +88,6 @@ export class PlayerComponent implements OnInit {
     this.audio.currentTime = event;
   }
 
-
-  // getAllMusic(): Observable<Music[]> {
-  //   return this.store
-  //     .collection('music',
-  //     ref => ref.orderBy('title'))
-  //     .valueChanges({ idField: 'id' }).pipe() as Observable<Music[]>;
-  // }
-  //
   uploadMusic(event: any): void {
     //   for (var index = 0; index < event.target.files.length; index++) {
     //     const file = event.target.files[index];
