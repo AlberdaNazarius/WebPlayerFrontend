@@ -15,6 +15,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PlaylistItemComponent } from './sidebar/playlist-item/playlist-item.component';
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from "@angular/material/slider";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -27,12 +35,19 @@ import {AppRoutingModule} from "./app-routing.module";
     PlaylistCardComponent,
     HomeComponent,
     SidebarComponent,
-    PlaylistItemComponent
+    PlaylistItemComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
+    MatSliderModule,
+    FormsModule
   ],
   providers: [PlaylistService, SongService],
   bootstrap: [AppComponent]
