@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as moment from 'moment';
 import {PlayerService} from "../shared/service/player.service";
+import {Song} from "../shared/model/song.model";
 
 @Component({
   selector: 'app-player',
@@ -9,6 +10,7 @@ import {PlayerService} from "../shared/service/player.service";
 })
 export class PlayerComponent implements OnInit {
   audio: HTMLAudioElement;
+  currentSong: Song;
   currentTime: string;
   musicLength: string;
   duration: number;
@@ -21,6 +23,7 @@ export class PlayerComponent implements OnInit {
     this.duration = 1;
     this.musicLength = '0:00';
     this.currentTime = '0:00';
+    this.currentSong = this.playerService.getCurrentSong();
 
     this.audio.ondurationchange = () => {
       const totalSeconds = Math.floor(this.audio.duration),
@@ -31,6 +34,7 @@ export class PlayerComponent implements OnInit {
         `${Math.floor(duration.asMinutes())}:
                           ${duration.seconds()}`;
       this.duration = totalSeconds;
+      this.currentSong = this.playerService.getCurrentSong();
     }
 
     this.audio.ontimeupdate = () => {
@@ -62,31 +66,5 @@ export class PlayerComponent implements OnInit {
 
   durationSlider(value: number) {
     this.audio.currentTime = value;
-  }
-
-  uploadMusic(event: any): void {
-    //   for (var index = 0; index < event.target.files.length; index++) {
-    //     const file = event.target.files[index];
-    //     const filePath = `music/${file.name}`;
-    //     const fileRef = this.storage.ref(filePath);
-    //     this.storage.upload(filePath, file).then((uploadTaskSnapshot) => {
-    //       fileRef.getDownloadURL().subscribe((url: any) => {
-    //         jsmediatags.read(file, {
-    //           onSuccess: (tagType: TagType) => {
-    //             let music: Music = {
-    //               album: tagType.tags.album === undefined ?
-    //                 '' : tagType.tags.album,
-    //               artist: tagType.tags.artist === undefined ?
-    //                 '' : tagType.tags.artist,
-    //               title: tagType.tags.title === undefined ?
-    //                 '' : tagType.tags.title,
-    //               url: url
-    //             };
-    //             this.store.collection('music').add(music);
-    //           }
-    //         })
-    //       })
-    //     })
-    //   }
   }
 }

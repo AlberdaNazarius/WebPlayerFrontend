@@ -22,3 +22,24 @@ footer {
 mat-toolbar {
   background-color: #060607;
 }
+
+.container {
+  background-color: #060607;
+  width: 100%;
+}
+
+.id-image {
+  display: inline-block;
+}
+
+.title-author {
+  display: inline-block;
+}
+
+.song-main-section {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+  margin-left: 20px;
+}
