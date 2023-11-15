@@ -22,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from "@angular/material/slider";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
+import {PlayerService} from "./shared/service/player.service";
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import {FormsModule} from "@angular/forms";
     MatSliderModule,
     FormsModule
   ],
-  providers: [PlaylistService, SongService],
+  providers: [PlaylistService, SongService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Song} from "../../../shared/model/song.model";
+import {PlayerService} from "../../../shared/service/player.service";
 
 @Component({
   selector: 'app-song-item',
@@ -11,4 +12,11 @@ export class SongItemComponent {
   public index: number;
   @Input()
   public song: Song;
+
+  constructor(private playerService: PlayerService) {
+  }
+
+  play(index: number): void {
+    this.playerService.play(index)
+  }
 }

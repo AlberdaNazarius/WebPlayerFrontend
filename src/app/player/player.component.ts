@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as moment from 'moment';
-import {SongService} from "../shared/service/song.service";
-import {Song} from "../shared/model/song.model";
+import {PlayerService} from "../shared/service/player.service";
 
 @Component({
   selector: 'app-player',
@@ -9,21 +8,20 @@ import {Song} from "../shared/model/song.model";
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-  audio = new Audio();
+  audio: HTMLAudioElement;
   currentTime: string;
   musicLength: string;
-  duration: number = 1;
-  trackPointer: number = 0;
-  musicList: Song[];
-  currentMusic: Song;
+  duration: number;
 
-  constructor(private songService: SongService) {
-    this.musicLength = '0:00';
-    this.currentTime = '0:00';
-    this.musicList = songService.getSongs();
+  constructor(private playerService: PlayerService) {
   }
 
   ngOnInit(): void {
+    this.audio = this.playerService.getAudio();
+    this.duration = 1;
+    this.musicLength = '0:00';
+    this.currentTime = '0:00';
+
     this.audio.ondurationchange = () => {
       const totalSeconds = Math.floor(this.audio.duration),
         duration = moment.duration(totalSeconds, 'seconds');
@@ -47,45 +45,23 @@ export class PlayerComponent implements OnInit {
   }
 
   play(index?: number): void {
-    if (index === undefined) {
-      if (this.audio.paused) {
-        if (this.audio.readyState === 0) {
-          this.trackPointer = 0;
-          this.currentMusic = this.musicList[0];
-          this.audio.src = this.currentMusic.url;
-        }
-        this.audio.play();
-      } else {
-        this.audio.pause();
-      }
-    } else {
-      this.trackPointer = index;
-      this.currentMusic = this.musicList[index];
-      this.audio.src = this.currentMusic.url;
-      this.audio.play();
-    }
+    this.playerService.play(index);
   }
 
   prev(): void {
-    this.trackPointer--;
-    this.currentMusic = this.musicList[this.trackPointer];
-    this.audio.src = this.currentMusic.url;
-    this.audio.play();
+    this.playerService.prev();
   }
 
   next(): void {
-    this.trackPointer++;
-    this.currentMusic = this.musicList[this.trackPointer];
-    this.audio.src = this.currentMusic.url;
-    this.audio.play();
+    this.playerService.next();
   }
 
-  volumeSlider(event: number) {
-    this.audio.volume = event / 16;
+  volumeSlider(value: number) {
+    this.audio.volume = value / 16;
   }
 
-  durationSlider(event: number) {
-    this.audio.currentTime = event;
+  durationSlider(value: number) {
+    this.audio.currentTime = value;
   }
 
   uploadMusic(event: any): void {
