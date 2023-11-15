@@ -16,30 +16,7 @@
       </div>
       <div class="col">{{song.album}}</div>
       <div class="col">{{song.dateAdded}}</div>
-      <div class="col">{{song.duration}}</div>
+      <div class="col">&nbsp;&nbsp;&nbsp;{{song.duration}}</div>
     </div>
   </div>
 </a>
-
-
-<!--<div class="music-list">-->
-<!--  <table mat-table [dataSource]="songs" class="music-list">-->
-<!--    <ng-container matColumnDef="title">-->
-<!--      <th mat-header-cell *matHeaderCellDef>Title</th>-->
-<!--      <td mat-cell *matCellDef="let music; let i = index;">-->
-<!--        -->
-<!--      </td>-->
-<!--    </ng-container>-->
-<!--    <ng-container matColumnDef="artist">-->
-<!--      <th mat-header-cell *matHeaderCellDef>Artist</th>-->
-<!--      <td mat-cell *matCellDef="let music">{{ music.artist }}</td>-->
-<!--    </ng-container>-->
-<!--    <ng-container matColumnDef="album">-->
-<!--      <th mat-header-cell *matHeaderCellDef>Album</th>-->
-<!--      <td mat-cell *matCellDef="let music">{{ music.album }}</td>-->
-<!--    </ng-container>-->
-<!--    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>-->
-<!--    <tr mat-row-->
-<!--        *matRowDef="let row; columns: displayedColumns;"></tr>-->
-<!--  </table>-->
-<!--</div>-->
