@@ -2,6 +2,14 @@
   color: #c4c4c4;
 }
 
+.default-container {
+  background-color: #616365;
+}
+
+.default-container:focus {
+  background-color: #7e8183;
+}
+
 .id-image {
   display: inline-block;
 }
@@ -19,10 +27,6 @@
 
 .song-id {
   margin-right: 15px;
-}
-
-.default-container {
-  background-color: #616365;
 }
 
 .selected-audio {
