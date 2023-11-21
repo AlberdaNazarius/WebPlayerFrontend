@@ -1,15 +1,15 @@
 <a (dblclick)="play(index)" style="cursor: pointer;">
-  <div class="container">
+  <div class="container default-container">
     <div class="row align-items-center">
       <div class="col">
         <div class="song-main-section">
           <div class="id-image">
-            <span class="song-id">{{index+1}}</span>
+            <span class="song-id" [ngClass]="isSelected ? 'selected-audio' : 'text-light'">{{index+1}}</span>
             <img src="{{song.imagePath}}" alt="music_image">
           </div>
 
           <div class="title-author">
-            <div class="row text-light">{{song.name}}</div>
+            <div class="row " [ngClass]="isSelected ? 'selected-audio' : 'text-light'">{{song.name}}</div>
             <div class="row">{{song.author}}</div>
           </div>
         </div>

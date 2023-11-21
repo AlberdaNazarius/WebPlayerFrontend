@@ -1,5 +1,4 @@
 .container {
-  background-color: #616365;
   color: #c4c4c4;
 }
 
@@ -20,4 +19,12 @@
 
 .song-id {
   margin-right: 15px;
+}
+
+.default-container {
+  background-color: #616365;
+}
+
+.selected-audio {
+  color: #3ad93a;
 }

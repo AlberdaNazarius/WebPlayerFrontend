@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Song} from "../model/song.model";
 import {SongService} from "./song.service";
+import {SongItemComponent} from "../../playlist/song-list/song-item/song-item.component";
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,21 @@ export class PlayerService {
   private readonly songs: Song[];
   private currentSong: Song;
   private trackPointer: number;
+  private selectedComponent;
 
   constructor(private songService: SongService) {
     this.audio = new Audio();
     this.songs = this.songService.getSongs();
     this.trackPointer = 0;
     this.currentSong = this.songs[0];
+  }
+
+  public setSelected(component: SongItemComponent): void {
+    if (this.selectedComponent != undefined) {
+      this.selectedComponent.isSelected = false;
+    }
+    this.selectedComponent = component;
+    this.selectedComponent.isSelected = true;
   }
 
   public play(index?: number): void {
