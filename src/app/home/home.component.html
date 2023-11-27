@@ -1,3 +1,11 @@
+<h1 class="p-3 m-0 fw-bolder">Now trending</h1>
+<div class="card-group container-fluid">
+  <div *ngFor="let playlist of playlists">
+    <app-playlist-card [playlist]="playlist"></app-playlist-card>
+  </div>
+</div>
+
+<h1 class="p-3 m-0 fw-bolder">Good for you</h1>
 <div class="card-group container-fluid">
   <div *ngFor="let playlist of playlists">
     <app-playlist-card [playlist]="playlist"></app-playlist-card>

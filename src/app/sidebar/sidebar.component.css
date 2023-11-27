@@ -67,3 +67,12 @@
 .sidebar-navigation .header::before {
   background-color: transparent;
 }
+
+svg {
+  fill: white;
+}
+
+.add-playlist-btn {
+  background: none;
+  border: none;
+}

@@ -14,8 +14,12 @@ export class SidebarComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.playlistService.getPlaylists()
-      .subscribe(responseData =>
-        responseData.then(playlists => this.playlists = playlists));
+    this.playlists =  this.playlistService.getPlaylists()
+      // .subscribe(responseData =>
+      //   responseData.then(playlists => this.playlists = playlists));
+  }
+
+  createPlaylist(): void {
+    this.playlistService.createPlaylist();
   }
 }
