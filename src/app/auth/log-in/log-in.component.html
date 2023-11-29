@@ -1,0 +1,22 @@
+<div class="container-fluid main-container">
+  <div class="row justify-content-center">
+    <div class="shadow card">
+      <div class="card-body p-md-4">
+        <h2 class="text-center mb-4 text-light">Log in</h2>
+        <form (ngSubmit)="onSubmit(logInForm)" #logInForm="ngForm">
+          <div class="mb-4">
+            <input type="email" placeholder="Email address" class="form-control" ngModel name="email" required email #email="ngModel">
+            <div *ngIf="!email.valid && email.touched" class="form-text error-text">Please enter valid email.</div>
+          </div>
+          <div class="mb-4">
+            <input type="password" placeholder="Password" class="form-control" ngModel name="password" required #password="ngModel">
+            <div *ngIf="!password.valid && password.touched" class="form-text error-text">Please enter password.</div>
+          </div>
+          <div class="d-flex py-2 justify-content-center">
+            <button [disabled]="!logInForm.valid" type="submit" class="btn btn-primary flex-fill">log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

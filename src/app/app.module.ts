@@ -24,6 +24,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import {PlayerService} from "./shared/service/player.service";
 import { ContextMenuComponent } from './context-menu/context-menu.component';
+import { LogInComponent } from './auth/log-in/log-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { ContextMenuComponent } from './context-menu/context-menu.component';
     SidebarComponent,
     PlaylistItemComponent,
     ContextMenuComponent,
+    LogInComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

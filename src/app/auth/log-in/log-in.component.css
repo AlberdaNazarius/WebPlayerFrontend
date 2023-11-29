@@ -1,0 +1,27 @@
+.main-container {
+  margin-top: 20vh;
+}
+
+.card {
+  width: 26rem;
+  border-radius: 14px;
+  background-color: #1c1e1f;
+}
+
+.form-control {
+  background-color: #313334;
+  border: none;
+  color: white;
+}
+
+::placeholder {
+  color: #7d8584;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid crimson;
+}
+
+.error-text {
+  color: crimson;
+}

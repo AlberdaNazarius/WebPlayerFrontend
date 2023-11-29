@@ -1,6 +1,8 @@
 <nav class="navbar navbar-dark bg-dark m-0">
   <div class="container-fluid text-color">
-    <div class="navbar-header"></div>
+    <div class="navbar-header d-flex justify-content-center">
+      <a *ngIf="authService.isAuthPage" class="navbar-brand" routerLink="">Steaming service</a>
+    </div>
 
     <form class="d-flex col-xll-6 col-xl-5 xol-m-4" role="search">
       <input class="form-control h-25 bar-dark" type="search" placeholder="Search..." aria-label="Search">
@@ -8,8 +10,8 @@
 
     <div class="row">
       <ul class="nav navbar-right gap-2">
-        <li><a class="link-light link-underline-opacity-0" href="#">Sign up</a></li>
-        <li><a class="link-light link-underline-opacity-0" href="#">Log in</a></li>
+        <li><a class="link-light link-underline-opacity-0" routerLink="signup">Sign up</a></li>
+        <li><a class="link-light link-underline-opacity-0" routerLink="login">Log in</a></li>
       </ul>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthService} from "../shared/service/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  //TODO make searchbar dark
-  //TODO make header sticky
+  constructor(protected authService: AuthService) {
+  }
 }

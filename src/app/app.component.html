@@ -1,4 +1,4 @@
-<app-sidebar></app-sidebar>
+<app-sidebar *ngIf="!authService.isAuthPage"></app-sidebar>
 <app-header></app-header>
 <router-outlet></router-outlet>
-<app-player></app-player>
+<app-player *ngIf="!authService.isAuthPage"></app-player>
