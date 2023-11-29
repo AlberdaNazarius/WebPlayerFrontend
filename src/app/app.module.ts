@@ -23,6 +23,7 @@ import { MatSliderModule } from "@angular/material/slider";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import {PlayerService} from "./shared/service/player.service";
+import { ContextMenuComponent } from './context-menu/context-menu.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {PlayerService} from "./shared/service/player.service";
     HomeComponent,
     SidebarComponent,
     PlaylistItemComponent,
+    ContextMenuComponent,
   ],
   imports: [
     BrowserModule,

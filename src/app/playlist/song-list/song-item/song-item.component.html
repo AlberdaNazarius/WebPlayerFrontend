@@ -1,22 +1,30 @@
-<a (dblclick)="play(index)" style="cursor: pointer;">
-  <div class="container default-container" tabindex="1">
-    <div class="row align-items-center">
-      <div class="col">
-        <div class="song-main-section">
-          <div class="id-image">
-            <span class="song-id" [ngClass]="isSelected ? 'selected-audio' : 'text-light'">{{index+1}}</span>
-            <img src="{{song.imagePath}}" alt="music_image">
-          </div>
+<div class="element" (contextmenu)="displayContextMenu($event); false">
+  <a (dblclick)="play(index)" style="cursor: pointer;">
+    <div class="container default-container" tabindex="1">
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="song-main-section">
+            <div class="id-image">
+              <span class="song-id" [ngClass]="isSelected ? 'selected-audio' : 'text-light'">{{index+1}}</span>
+              <img src="{{song.imagePath}}" alt="music_image">
+            </div>
 
-          <div class="title-author">
-            <div class="row " [ngClass]="isSelected ? 'selected-audio' : 'text-light'">{{song.name}}</div>
-            <div class="row">{{song.author}}</div>
+            <div class="title-author">
+              <div class="row " [ngClass]="isSelected ? 'selected-audio' : 'text-light'">{{song.name}}</div>
+              <div class="row">{{song.author}}</div>
+            </div>
           </div>
         </div>
+        <div class="col">{{song.album}}</div>
+        <div class="col">{{song.dateAdded}}</div>
+        <div class="col">&nbsp;&nbsp;&nbsp;{{song.duration}}</div>
       </div>
-      <div class="col">{{song.album}}</div>
-      <div class="col">{{song.dateAdded}}</div>
-      <div class="col">&nbsp;&nbsp;&nbsp;{{song.duration}}</div>
     </div>
-  </div>
-</a>
+  </a>
+  <app-context-menu
+    *ngIf="rightClickMenuItems.length > 0 && isDisplayContextMenu"
+    [ngStyle]="getRightClickMenuStyle()"
+    [contextMenuItems]="rightClickMenuItems"
+    (onContextMenuItemClick)="handleMenuItemClick($event)">
+  </app-context-menu>
+</div>
