@@ -5,7 +5,7 @@ export class Song {
               public album: string,
               public dateAdded: string,
               public duration: string,
-              public url: string,
-              public imagePath: string
+              public songKey: string,
+              public image: string
   ) {}
 }

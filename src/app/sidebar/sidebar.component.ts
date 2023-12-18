@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Playlist} from "../shared/model/playlist.model";
 import {PlaylistService} from "../shared/service/playlist.service";
 import {GlobalStyleService} from "../shared/service/global-style.service";
@@ -9,7 +9,8 @@ import {GlobalStyleService} from "../shared/service/global-style.service";
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit{
-  protected playlists: Playlist[];
+  playlists: Playlist[];
+  showForm: boolean;
 
   constructor(private playlistService: PlaylistService,
               private styleService: GlobalStyleService) {
@@ -17,12 +18,24 @@ export class SidebarComponent implements OnInit{
 
   ngOnInit(): void {
     this.styleService.setGlobalLeftPadding(220);
-    this.playlists =  this.playlistService.getPlaylists()
-      // .subscribe(responseData =>
-      //   responseData.then(playlists => this.playlists = playlists));
+    // this.playlists =
+      this.playlistService.getPlaylists()
+      .subscribe(responseData =>
+        responseData.then(playlists => this.playlists = playlists));
   }
 
-  createPlaylist(): void {
-    this.playlistService.createPlaylist();
+  createPlaylist(value: string): void {
+    if (value != "") {
+      this.playlistService.createPlaylist(value);
+    }
+    this.showForm = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  documentClick(event): void {
+    if (event.target.tagName == "INPUT" || event.target.tagName == "BUTTON" || event.target.id == "pl-form") {
+      return
+    }
+    this.showForm = event.target.id == "crtPlaylist";
   }
 }

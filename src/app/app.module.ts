@@ -21,11 +21,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from "@angular/material/slider";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {PlayerService} from "./shared/service/player.service";
 import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { LogInComponent } from './auth/log-in/log-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import {PlaylistEditorComponent} from "./sidebar/playlist-editor-component/playlist-editor.component";
 
 
 @NgModule({
@@ -54,7 +55,9 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     MatTableModule,
     MatButtonModule,
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    PlaylistEditorComponent
   ],
   providers: [PlaylistService, SongService, PlayerService],
   bootstrap: [AppComponent]

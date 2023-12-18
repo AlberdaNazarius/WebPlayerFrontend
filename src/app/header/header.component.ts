@@ -7,6 +7,8 @@ import {AuthService} from "../shared/service/auth.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  userName: string = "User";
+
   constructor(protected authService: AuthService) {
   }
 }
