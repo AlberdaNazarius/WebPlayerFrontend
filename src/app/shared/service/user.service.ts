@@ -9,11 +9,11 @@ import {Song} from "../model/song.model";
 export class UserService {
 
   private songs: Song[] = [
-    {"id": 1, "name": "Enemy", "author": "There For Tomorrow", "album": "Five", dateAdded: "Oct 6,2020", "duration": "3:33", url: "assets/music/Enemy.mp3", "imagePath":"assets/images/song/enemy.jpg"},
-    {"id": 2, "name": "A Little Faster", "author": "Deni", "album": "New born", dateAdded: "Jun 7,2021","duration": "3:04", url: "assets/music/A Little Faster.mp3", "imagePath":"assets/images/song/ALittleFaster.jpg"},
-    {"id": 3, "name": "Brand New Numb", "author": "HelNo", "album": "Earth", dateAdded: "Nov 1,2020","duration": "3:42", url: "assets/music/Brand New Numb.mp3", "imagePath":"assets/images/song/brandNewNumb.jpg"},
-    {"id": 4, "name": "Lacrimosa", "author": "Lard", "album": "Given", dateAdded: "Nov 9,2024","duration": "3:33", url: "assets/music/Lacrimosa.mp3", "imagePath":"assets/images/song/lacrimosa.png"},
-    {"id": 5, "name": "SPIT IN MY FACE", "author": "ThxSoMch", "album": "SPIT IN MY FACE", dateAdded: "Nov 7,2020","duration": "2:27", url: "assets/music/SPIT IN MY FACE.mp3", "imagePath":"assets/images/song/spittomyface.jpg"},
+    {"id": 1, "name": "Enemy", "author": "There For Tomorrow", "album": "Five", dateAdded: "Oct 6,2020", "duration": "3:33", songKey: "assets/music/Enemy.mp3", image:"assets/images/song/enemy.jpg"},
+    {"id": 2, "name": "A Little Faster", "author": "Deni", "album": "New born", dateAdded: "Jun 7,2021","duration": "3:04", songKey: "assets/music/A Little Faster.mp3", image:"assets/images/song/ALittleFaster.jpg"},
+    {"id": 3, "name": "Brand New Numb", "author": "HelNo", "album": "Earth", dateAdded: "Nov 1,2020","duration": "3:42", songKey: "assets/music/Brand New Numb.mp3", image:"assets/images/song/brandNewNumb.jpg"},
+    {"id": 4, "name": "Lacrimosa", "author": "Lard", "album": "Given", dateAdded: "Nov 9,2024","duration": "3:33", songKey: "assets/music/Lacrimosa.mp3", image:"assets/images/song/lacrimosa.png"},
+    {"id": 5, "name": "SPIT IN MY FACE", "author": "ThxSoMch", "album": "SPIT IN MY FACE", dateAdded: "Nov 7,2020","duration": "2:27", songKey: "assets/music/SPIT IN MY FACE.mp3", image:"assets/images/song/spittomyface.jpg"},
   ]
 
   private playlists: Playlist[] = [
